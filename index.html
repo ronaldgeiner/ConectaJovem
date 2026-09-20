@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formação tecnológica gratuita para jovens de 14 a 24 anos da Comunidade Nova Esperança, em Belo Horizonte.">
+    <meta name="theme-color" content="#122334">
+    <title>Início | ConectaJovem</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a class="pular-conteudo" href="#conteudo-principal">Pular para o conteúdo principal</a>
+    <header class="cabecalho">
+        <div class="cabecalho-conteudo container">
+            <a class="logo" href="index.html" aria-label="ConectaJovem - página inicial">
+                <img src="src/logo/logo2.png" alt="" width="48" height="48">
+                <span>ConectaJovem</span>
+            </a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+            <nav class="menu" id="menu-principal" aria-label="Navegação principal">
+                <ul>
+                    <li><a href="index.html" aria-current="page">Início</a></li>
+                    <li><a href="projetos.html">Projetos</a></li>
+                    <li class="menu-item-dropdown"><a class="menu-item-link" href="cadastro.html">Participar</a><button class="menu-submenu-toggle" type="button" aria-expanded="false" aria-controls="submenu-participar" aria-label="Abrir submenu Participar">⌄</button><ul class="submenu" id="submenu-participar"><li><a href="cadastro.html#jovem">Jovem</a></li><li><a href="cadastro.html#voluntario">Voluntário</a></li><li><a href="cadastro.html#apoiador">Apoiador</a></li></ul></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main id="conteudo-principal" tabindex="-1">
+        <section class="hero" aria-labelledby="titulo-inicio">
+            <div class="container hero-conteudo">
+                <div class="hero-texto">
+                    <p class="hero-chamada">Formação tecnológica gratuita em Belo Horizonte</p>
+                    <h1 class="titulo-principal" id="titulo-inicio">Preparando jovens para o futuro da <span class="titulo-destaque">tecnologia</span></h1>
+                    <p class="descricao">Oferecemos formação gratuita em programação e desenvolvimento web para jovens de 14 a 24 anos da Comunidade Nova Esperança, criando caminhos para estudo, trabalho e transformação social.</p>
+                    <div class="grupo-botoes">
+                        <a class="botao" href="cadastro.html#cadastro-interesse">Quero participar</a>
+                        <a class="botao botao-secundario" href="projetos.html">Conheça nossos projetos</a>
+                    </div>
+                </div>
+                <div class="hero-imagem">
+                    <picture>
+                        <source srcset="src/hero-transparente/ilustracao-hero-transparente.webp" type="image/webp">
+                        <img src="src/hero/ilustracao-hero-sem-fundo.png" alt="Jovens aprendendo programação e tecnologia" width="1672" height="941" fetchpriority="high">
+                    </picture>
+                </div>
+            </div>
+        </section>
+        <section class="sobre container" aria-labelledby="sobre-titulo">
+            <h2 id="sobre-titulo">Sobre a ConectaJovem</h2>
+            <p class="historia">Fundada em 2022, a ConectaJovem nasceu da iniciativa de jovens que conheceram a área de tecnologia e transformaram esse conhecimento em novas possibilidades profissionais.</p>
+            <p>Atuando na Comunidade Nova Esperança, em Belo Horizonte, a organização oferece formação e orientação para jovens de 14 a 24 anos, usando a tecnologia como ferramenta de educação, inclusão e transformação social.</p>
+        </section>
+        <section class="missao container" aria-labelledby="missao-titulo">
+            <h2 id="missao-titulo">Nossa missão</h2>
+            <p>Democratizar o acesso à educação em tecnologia e criar oportunidades para jovens que encontram barreiras para acessar formação e orientação profissional.</p>
+        </section>
+        <section class="atividades container" aria-labelledby="atividades-titulo">
+            <h2 id="atividades-titulo">O que fazemos</h2>
+            <article class="card">
+                <span class="card-icone" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4" /><path d="m6 8-4 4 4 4" /><path d="m14.5 4-5 16" /></svg></span>
+                <h3>Programação e desenvolvimento web</h3>
+                <p>Oferecemos formação gratuita em programação e desenvolvimento web, apresentando conhecimentos e ferramentas fundamentais para iniciar uma trajetória na área de tecnologia.</p>
+            </article>
+            <article class="card">
+                <span class="card-icone" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6" /><path d="M10 22h4" /><path d="M15.1 14c.2-.7.9-1.3.9-2.5a4 4 0 0 0-8 0c0 1.2.7 1.8.9 2.5A2 2 0 0 0 9.8 16h4.4a2 2 0 0 0 .9-2Z" /></svg></span>
+                <h3>Projetos práticos</h3>
+                <p>Incentivamos os participantes a aplicar conhecimentos na criação de projetos que desenvolvem criatividade, trabalho em equipe e resolução de problemas.</p>
+            </article>
+            <article class="card">
+                <span class="card-icone" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" /><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" /><path d="M2 12h20" /></svg></span>
+                <h3>Preparação para o mercado</h3>
+                <p>Oferecemos orientação para portfólio, desenvolvimento profissional e oportunidades de estágio e trabalho na área de tecnologia.</p>
+            </article>
+        </section>
+        <section class="impacto container" aria-labelledby="impacto-titulo">
+            <h2 id="impacto-titulo">Nosso impacto</h2>
+            <div class="indicadores">
+                <div class="indicador"><strong>150+</strong><span>Jovens atendidos</span></div>
+                <div class="indicador"><strong>15</strong><span>Voluntários</span></div>
+                <div class="indicador"><strong>1</strong><span>Comunidade atendida</span></div>
+                <div class="indicador"><strong>2022</strong><span>Ano de fundação</span></div>
+            </div>
+            <p>Nosso objetivo é ampliar o acesso à educação tecnológica e contribuir para que cada vez mais jovens estejam preparados para novas oportunidades acadêmicas e profissionais.</p>
+            <p class="texto-auxiliar">Indicadores institucionais. Atualização prevista com a consolidação anual das atividades.</p>
+        </section>
+    </main>
+    <footer class="rodape">
+        <div class="rodape-conteudo container">
+            <a class="logo" href="index.html" aria-label="ConectaJovem - página inicial"><img src="src/logo/logo2.png" alt="" width="48" height="48"><span>ConectaJovem</span></a>
+            <address class="localizacao">Belo Horizonte, MG</address>
+            <div class="rodape-contato"><h2>Conecte-se conosco</h2><p>Perfis institucionais.</p><div class="redes-sociais" aria-label="Redes sociais"><span class="rede-social"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>Instagram</span><span class="rede-social"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>Facebook</span><span class="rede-social"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</span></div></div>
+            <p class="direitos">&copy; 2026 ConectaJovem. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script src="js/menu.js"></script>
+</body>
+</html>
