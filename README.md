@@ -15,8 +15,13 @@ Este trabalho foi desenvolvido para fins acadêmicos e utiliza informações fic
 - CSS Grid
 - Flexbox
 - JavaScript
+<<<<<<< HEAD
 - Google Fonts
 - Bootstrap Icons por CDN
+=======
+- SVG
+- Google Fonts
+>>>>>>> origin/main
 
 ## Recursos implementados
 
@@ -29,6 +34,7 @@ Este trabalho foi desenvolvido para fins acadêmicos e utiliza informações fic
 - Formulário com validação local;
 - Estados de foco, hover e disabled;
 - Feedback visual;
+<<<<<<< HEAD
 - Navegação por teclado;
 - Aplicação SPA com roteamento por hash;
 - Templates HTML carregados com `fetch` e cache;
@@ -55,3 +61,14 @@ Os formulários possuem validação personalizada e feedback visual. Após a val
 ## Observação acadêmica
 
 Este projeto foi desenvolvido para fins acadêmicos, com informações institucionais fictícias e sem processamento real de inscrições, voluntariado ou doações.
+=======
+- Navegação por teclado.
+
+## Como executar
+
+Abra o arquivo `index.html` no navegador ou utilize a extensão Live Server no Visual Studio Code.
+
+## Observação
+
+O formulário possui validação e feedback local para demonstração acadêmica. Os dados não são enviados nem armazenados em servidor.
+>>>>>>> origin/main
