@@ -5,6 +5,9 @@
   --cor-destaque: #20d5d8;
   --cor-fundo: #f4f8fb;
   --cor-superficie: #ffffff;
+  --cor-sucesso: #176b3a;
+  --cor-fundo-sucesso: #edf7f0;
+  --cor-fundo-erro: #fff1f0;
   --cor-texto-forte: #122334;
   --cor-texto-secundario: #52616b;
   --cor-borda: #52616b;
@@ -116,7 +119,7 @@ a {
   height: 48px;
 }
 
-.menu > ul {
+.menu>ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
@@ -169,7 +172,11 @@ a {
   align-items: center;
 }
 
-.menu-item-link {
+.menu-item-label {
+  display: inline-block;
+  padding: var(--space-2) 0;
+  color: var(--cor-superficie);
+  font-weight: 600;
   white-space: nowrap;
 }
 
@@ -189,7 +196,7 @@ a {
 
 .submenu {
   position: absolute;
-  top: calc(100% + var(--space-2));
+  top: 100%;
   right: 0;
   z-index: 10;
   display: none;
@@ -203,9 +210,7 @@ a {
   list-style: none;
 }
 
-.menu-item-dropdown:hover > .submenu,
-.menu-item-dropdown:focus-within > .submenu,
-.menu-item-dropdown.is-open > .submenu {
+.menu-item-dropdown.is-open>.submenu {
   display: grid;
 }
 
@@ -361,9 +366,9 @@ textarea:focus-visible {
 
 .sobre h2,
 .missao h2,
-.atividades > h2,
+.atividades>h2,
 .impacto h2,
-.projetos > h2,
+.projetos>h2,
 .voluntario h2,
 .doacoes h2,
 .apresentacao-cadastro h1 {
@@ -376,9 +381,9 @@ textarea:focus-visible {
 
 .sobre h2::after,
 .missao h2::after,
-.atividades > h2::after,
+.atividades>h2::after,
 .impacto h2::after,
-.projetos > h2::after,
+.projetos>h2::after,
 .voluntario h2::after,
 .doacoes h2::after {
   display: block;
@@ -392,7 +397,7 @@ textarea:focus-visible {
 
 .sobre p,
 .missao p,
-.impacto > p,
+.impacto>p,
 .projetos .card p,
 .voluntario p,
 .doacoes p {
@@ -401,10 +406,10 @@ textarea:focus-visible {
   color: var(--cor-texto-secundario);
 }
 
-.sobre p + p,
-.voluntario p + p,
-.doacoes p + p,
-.impacto > p + p {
+.sobre p+p,
+.voluntario p+p,
+.doacoes p+p,
+.impacto>p+p {
   margin-top: var(--space-4);
 }
 
@@ -425,8 +430,8 @@ textarea:focus-visible {
   gap: var(--space-5);
 }
 
-.atividades > h2,
-.projetos > h2 {
+.atividades>h2,
+.projetos>h2 {
   grid-column: 1 / -1;
 }
 
@@ -457,9 +462,14 @@ textarea:focus-visible {
   color: var(--cor-primaria);
 }
 
-.card-icone svg {
+.card-icone .bi {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 24px;
   height: 24px;
+  font-size: 24px;
+  line-height: 1;
 }
 
 .badge {
@@ -563,7 +573,7 @@ textarea:focus-visible {
 }
 
 .hero-projetos .hero-content,
-.apresentacao-cadastro > .container {
+.apresentacao-cadastro>.container {
   max-width: 760px;
 }
 
@@ -639,7 +649,7 @@ textarea:focus-visible {
   box-shadow: var(--sombra-card);
 }
 
-.formulario-cadastro > p {
+.formulario-cadastro>p {
   margin: 0 0 var(--space-5);
   color: var(--cor-texto-secundario);
 }
@@ -708,6 +718,34 @@ textarea:focus-visible {
   border-color: var(--cor-foco);
 }
 
+.formulario-cadastro .campo-dica {
+  color: var(--cor-texto-secundario);
+  font-size: var(--texto-auxiliar);
+}
+
+.formulario-cadastro .campo-erro {
+  color: var(--cor-erro);
+  font-size: var(--texto-auxiliar);
+  font-weight: 600;
+}
+
+.formulario-cadastro .campo-erro:empty,
+.formulario-cadastro .campo-dica:empty {
+  display: none;
+}
+
+.formulario-cadastro input.campo-interagido:invalid,
+.formulario-cadastro select.campo-interagido:invalid,
+.formulario-cadastro textarea.campo-interagido:invalid {
+  border-color: var(--cor-erro);
+}
+
+.formulario-cadastro input.campo-interagido:valid,
+.formulario-cadastro select.campo-interagido:valid,
+.formulario-cadastro textarea.campo-interagido:valid {
+  border-color: var(--cor-sucesso);
+}
+
 .opcoes {
   display: grid;
   gap: var(--space-2);
@@ -727,6 +765,21 @@ textarea:focus-visible {
 .opcao:focus-within {
   border-color: var(--cor-foco);
   box-shadow: 0 0 0 3px rgba(13, 121, 134, 0.2);
+}
+
+.grupo-invalido .opcao {
+  border-color: var(--cor-erro);
+  background: var(--cor-fundo-erro);
+}
+
+.grupo-erro {
+  color: var(--cor-erro);
+  font-size: var(--texto-auxiliar);
+  font-weight: 600;
+}
+
+.grupo-erro:empty {
+  display: none;
 }
 
 .opcao input {
@@ -754,6 +807,18 @@ textarea:focus-visible {
 
 .form-status {
   margin-top: var(--space-5);
+}
+
+.formulario-cadastro .form-status--erro {
+  border-color: var(--cor-erro);
+  background: var(--cor-fundo-erro);
+  color: var(--cor-erro);
+}
+
+.formulario-cadastro .form-status--sucesso {
+  border-color: var(--cor-sucesso);
+  background: var(--cor-fundo-sucesso);
+  color: var(--cor-sucesso);
 }
 
 .formulario-cadastro .form-status:empty {
@@ -796,11 +861,11 @@ textarea:focus-visible {
   padding-block: var(--space-7);
 }
 
-.rodape-conteudo > .logo {
+.rodape-conteudo>.logo {
   grid-column: span 4;
 }
 
-.rodape-conteudo > .localizacao {
+.rodape-conteudo>.localizacao {
   grid-column: span 3;
 }
 
@@ -842,11 +907,16 @@ textarea:focus-visible {
   font-size: var(--texto-auxiliar);
 }
 
-.rede-social svg {
+.rede-social .bi {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
   width: 18px;
   height: 18px;
   color: var(--cor-destaque);
+  font-size: 18px;
+  line-height: 1;
 }
 
 .direitos {
@@ -867,6 +937,7 @@ textarea:focus-visible {
 }
 
 @media (max-width: 1024px) {
+
   .hero-texto,
   .hero-imagem {
     grid-column: span 6;
@@ -881,8 +952,8 @@ textarea:focus-visible {
     grid-column: span 6;
   }
 
-  .rodape-conteudo > .logo,
-  .rodape-conteudo > .localizacao {
+  .rodape-conteudo>.logo,
+  .rodape-conteudo>.localizacao {
     grid-column: span 6;
   }
 
@@ -919,14 +990,15 @@ textarea:focus-visible {
 }
 
 @media (max-width: 768px) {
+
   .atividades .card,
   .projetos .card,
   .indicador {
     grid-column: 1 / -1;
   }
 
-  .rodape-conteudo > .logo,
-  .rodape-conteudo > .localizacao,
+  .rodape-conteudo>.logo,
+  .rodape-conteudo>.localizacao,
   .rodape-contato {
     grid-column: span 6;
   }
@@ -960,7 +1032,7 @@ textarea:focus-visible {
     display: block;
   }
 
-  .menu > ul {
+  .menu>ul {
     display: grid;
     justify-content: center;
     gap: var(--space-2);
@@ -968,15 +1040,24 @@ textarea:focus-visible {
   }
 
   .menu-item-dropdown {
-    display: grid;
-    grid-template-columns: 1fr auto;
+    display: block;
   }
 
   .submenu {
     position: static;
-    grid-column: 1 / -1;
+    display: grid;
     min-width: 0;
+    margin-top: var(--space-2);
+    padding: var(--space-2) 0 0 var(--space-3);
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 0;
+    background: transparent;
     box-shadow: none;
+  }
+
+  .menu-submenu-toggle {
+    display: none;
   }
 
   .hero,
@@ -1009,8 +1090,8 @@ textarea:focus-visible {
   .atividades .card,
   .projetos .card,
   .indicador,
-  .rodape-conteudo > .logo,
-  .rodape-conteudo > .localizacao,
+  .rodape-conteudo>.logo,
+  .rodape-conteudo>.localizacao,
   .rodape-contato {
     grid-column: 1 / -1;
   }
@@ -1041,6 +1122,7 @@ textarea:focus-visible {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {

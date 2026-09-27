@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manifeste interesse em participar, ser voluntário ou apoiar a ConectaJovem.">
+    <meta name="theme-color" content="#122334">
+    <title>Participar | ConectaJovem</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo principal</a>
+    <header class="cabecalho">
+        <div class="cabecalho-conteudo container">
+            <a class="logo" href="../index.html" aria-label="ConectaJovem - página inicial"><img
+                    src="../imagens/logo/logo2.png" alt="" width="48" height="48"><span>ConectaJovem</span></a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal"
+                aria-label="Abrir menu"><span></span><span></span><span></span></button>
+            <nav class="menu" id="menu-principal" aria-label="Navegação principal">
+                <ul>
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="projetos.html">Projetos</a></li>
+                    <li class="menu-item-dropdown"><span class="menu-item-label">Participar</span><button
+                            class="menu-submenu-toggle" type="button" aria-expanded="false"
+                            aria-controls="submenu-participar" aria-label="Abrir submenu Participar"><i
+                                class="bi bi-caret-down-fill" aria-hidden="true"></i></button>
+                        <ul class="submenu" id="submenu-participar">
+                            <li><a href="cadastro.html#form-participante">Inscrição</a></li>
+                            <li><a href="cadastro.html#form-voluntario">Voluntário</a></li>
+                            <li><a href="cadastro.html#form-apoiador">Apoiador</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main id="conteudo" tabindex="-1">
+        <section class="apresentacao-cadastro" aria-labelledby="titulo-cadastro">
+            <div class="container">
+                <h1 id="titulo-cadastro">Faça parte da ConectaJovem</h1>
+                <p>Conte como você deseja participar.</p>
+            </div>
+        </section>
+        <div class="container">
+            <form class="formulario-cadastro" id="form-participante" aria-describedby="status-participante">
+                <p>Campos com <span class="obrigatorio" aria-hidden="true">*</span> são obrigatórios.</p>
+                <fieldset>
+                    <legend>Inscrição de jovens</legend>
+                    <label for="participante-nome">Nome completo <span class="obrigatorio"
+                            aria-hidden="true">*</span></label>
+                    <input type="text" id="participante-nome" name="nome" required minlength="3" maxlength="100"
+                        autocomplete="name" placeholder="Ex.: João da Silva">
+                    <label for="participante-email">E-mail <span class="obrigatorio" aria-hidden="true">*</span></label>
+                    <input type="email" id="participante-email" name="email" required maxlength="100"
+                        autocomplete="email" placeholder="Ex.: joao@email.com">
+                    <label for="participante-telefone">Celular ou telefone <span class="obrigatorio"
+                            aria-hidden="true">*</span></label>
+                    <input type="tel" id="participante-telefone" name="telefone" required maxlength="20"
+                        autocomplete="tel" inputmode="tel" placeholder="Ex.: (31) 99999-0000">
+                    <label for="participante-nascimento">Data de nascimento <span class="obrigatorio"
+                            aria-hidden="true">*</span></label>
+                    <input type="date" id="participante-nascimento" name="nascimento" required autocomplete="bday">
+                    <label for="participante-cidade">Cidade</label>
+                    <input type="text" id="participante-cidade" name="cidade" maxlength="50"
+                        autocomplete="address-level2" placeholder="Ex.: Belo Horizonte">
+                    <label for="participante-estado">Estado</label>
+                    <select id="participante-estado" name="estado" autocomplete="address-level1">
+                        <option value="">Selecione a UF</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="ES">Espírito Santo</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                    <label for="participante-interesses">Interesses de formação</label>
+                    <input type="text" id="participante-interesses" name="interesses" maxlength="150"
+                        placeholder="Ex.: programação e desenvolvimento web">
+                    <label for="participante-disponibilidade">Disponibilidade</label>
+                    <input type="text" id="participante-disponibilidade" name="disponibilidade" maxlength="100"
+                        placeholder="Ex.: Sábados de manhã">
+                    <label for="participante-mensagem">Mensagem ou observações</label>
+                    <textarea id="participante-mensagem" name="mensagem" rows="5" maxlength="500"
+                        placeholder="Conte-nos sobre seu interesse."></textarea>
+                </fieldset>
+                <p class="aviso-privacidade">Nesta etapa, não solicitamos documentos ou dados bancários. Suas
+                    informações serão usadas apenas para compreender seu interesse na ConectaJovem.</p>
+                <p class="form-status" id="status-participante" role="status" aria-atomic="true"></p>
+                <button type="submit">Enviar inscrição</button>
+            </form>
+
+            <form class="formulario-cadastro" id="form-voluntario" aria-describedby="status-voluntario">
+                <p>Campos com <span class="obrigatorio" aria-hidden="true">*</span> são obrigatórios.</p>
+                <fieldset>
+                    <legend>Interesse em voluntariado</legend>
+                    <label for="voluntario-nome">Nome completo <span class="obrigatorio"
+                            aria-hidden="true">*</span></label>
+                    <input type="text" id="voluntario-nome" name="nome" required minlength="3" maxlength="100"
+                        autocomplete="name" placeholder="Ex.: Maria da Silva">
+                    <label for="voluntario-email">E-mail <span class="obrigatorio" aria-hidden="true">*</span></label>
+                    <input type="email" id="voluntario-email" name="email" required maxlength="100" autocomplete="email"
+                        placeholder="Ex.: maria@email.com">
+                    <label for="voluntario-telefone">Celular ou telefone</label>
+                    <input type="tel" id="voluntario-telefone" name="telefone" maxlength="20" autocomplete="tel"
+                        inputmode="tel" placeholder="Ex.: (31) 99999-0000">
+                    <label for="voluntario-area">Área em que deseja colaborar <span class="obrigatorio"
+                            aria-hidden="true">*</span></label>
+                    <input type="text" id="voluntario-area" name="area" required maxlength="100"
+                        placeholder="Ex.: mentoria em programação">
+                    <label for="voluntario-experiencia">Experiência ou conhecimentos</label>
+                    <textarea id="voluntario-experiencia" name="experiencia" rows="4" maxlength="500"
+                        placeholder="Conte brevemente sua experiência."></textarea>
+                    <label for="voluntario-disponibilidade">Disponibilidade</label>
+                    <input type="text" id="voluntario-disponibilidade" name="disponibilidade" maxlength="100"
+                        placeholder="Ex.: quartas à noite">
+                    <label for="voluntario-mensagem">Mensagem ou observações</label>
+                    <textarea id="voluntario-mensagem" name="mensagem" rows="5" maxlength="500"
+                        placeholder="Conte como gostaria de contribuir."></textarea>
+                </fieldset>
+                <p class="aviso-privacidade">As informações serão usadas apenas para compreender seu interesse em atuar
+                    como voluntário.</p>
+                <p class="form-status" id="status-voluntario" role="status" aria-atomic="true"></p>
+                <button type="submit">Enviar interesse</button>
+            </form>
+
+            <form class="formulario-cadastro" id="form-apoiador" aria-describedby="status-apoiador">
+                <p>Campos com <span class="obrigatorio" aria-hidden="true">*</span> são obrigatórios.</p>
+                <fieldset>
+                    <legend>Interesse em apoiar a ConectaJovem</legend>
+                    <label for="apoiador-nome">Nome completo ou organização <span class="obrigatorio"
+                            aria-hidden="true">*</span></label>
+                    <input type="text" id="apoiador-nome" name="nome" required minlength="3" maxlength="120"
+                        autocomplete="name" placeholder="Ex.: Empresa ou pessoa apoiadora">
+                    <label for="apoiador-tipo">Tipo de apoio</label>
+                    <select id="apoiador-tipo" name="tipo-apoio">
+                        <option value="">Selecione uma opção</option>
+                        <option value="financeiro">Apoio financeiro</option>
+                        <option value="equipamentos">Computadores e equipamentos</option>
+                        <option value="materiais">Materiais para oficinas</option>
+                        <option value="parceria">Parceria institucional</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                    <label for="apoiador-email">E-mail <span class="obrigatorio" aria-hidden="true">*</span></label>
+                    <input type="email" id="apoiador-email" name="email" required maxlength="100" autocomplete="email"
+                        placeholder="Ex.: contato@empresa.com">
+                    <label for="apoiador-telefone">Celular ou telefone</label>
+                    <input type="tel" id="apoiador-telefone" name="telefone" maxlength="20" autocomplete="tel"
+                        inputmode="tel" placeholder="Ex.: (31) 99999-0000">
+                    <label for="apoiador-cidade">Cidade</label>
+                    <input type="text" id="apoiador-cidade" name="cidade" maxlength="50" autocomplete="address-level2"
+                        placeholder="Ex.: Belo Horizonte">
+                    <label for="apoiador-mensagem">Mensagem ou observações</label>
+                    <textarea id="apoiador-mensagem" name="mensagem" rows="6" maxlength="600"
+                        placeholder="Conte como deseja apoiar a organização."></textarea>
+                </fieldset>
+                <p class="aviso-privacidade">Este formulário registra apenas o interesse inicial. Não há pagamento ou
+                    envio de dados bancários nesta etapa.</p>
+                <p class="form-status" id="status-apoiador" role="status" aria-atomic="true"></p>
+                <button type="submit">Enviar interesse</button>
+            </form>
+        </div>
+    </main>
+    <footer class="rodape">
+        <div class="rodape-conteudo container">
+            <a class="logo" href="../index.html" aria-label="ConectaJovem - página inicial">
+                <img src="../imagens/logo/logo2.png" alt="" width="48" height="48">
+                <span>ConectaJovem</span>
+            </a>
+            <address class="localizacao">Belo Horizonte, MG</address>
+            <div class="rodape-contato">
+                <h2>Conecte-se conosco</h2>
+                <div class="redes-sociais" role="group" aria-label="Redes sociais, perfis em breve">
+                    <span class="rede-social">
+                        <i class="bi bi-instagram" aria-hidden="true"></i>
+                        Instagram
+                    </span>
+                    <span class="rede-social">
+                        <i class="bi bi-facebook" aria-hidden="true"></i>
+                        Facebook
+                    </span>
+                    <span class="rede-social">
+                        <i class="bi bi-linkedin" aria-hidden="true"></i>
+                        LinkedIn
+                    </span>
+                </div>
+            </div>
+            <p class="direitos">&copy; 2026 ConectaJovem. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script type="module">
+        import { iniciarFormularios } from "../js/cadastro.js";
+
+        iniciarFormularios();
+    </script>
+    <script src="../js/menu.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<section class="apresentacao-cadastro" aria-labelledby="titulo-voluntariado">
+  <div class="container">
+    <h1 id="titulo-voluntariado">Voluntariado</h1>
+    <p>Compartilhe seus conhecimentos e contribua com a formação dos jovens.</p>
+  </div>
+</section>
+<div class="container">
+  <form class="formulario-cadastro" id="form-voluntario" aria-describedby="status-voluntario">
+    <p>Campos com <span class="obrigatorio" aria-hidden="true">*</span> são obrigatórios.</p>
+    <fieldset>
+      <legend>Interesse em voluntariado</legend>
+      <label for="voluntario-nome">Nome completo <span class="obrigatorio" aria-hidden="true">*</span></label>
+      <input type="text" id="voluntario-nome" name="nome" required minlength="3" maxlength="100" autocomplete="name"
+        placeholder="Ex.: Maria da Silva">
+      <label for="voluntario-email">E-mail <span class="obrigatorio" aria-hidden="true">*</span></label>
+      <input type="email" id="voluntario-email" name="email" required maxlength="100" autocomplete="email"
+        placeholder="Ex.: maria@email.com">
+      <label for="voluntario-telefone">Celular ou telefone</label>
+      <input type="tel" id="voluntario-telefone" name="telefone" maxlength="20" autocomplete="tel" inputmode="tel"
+        placeholder="Ex.: (31) 99999-0000">
+      <fieldset class="grupo-opcoes" data-required-group="areas-voluntariado">
+        <legend>Áreas em que deseja colaborar <span class="obrigatorio" aria-hidden="true">*</span></legend>
+        <div class="opcoes">
+          <div class="opcao"><input type="checkbox" id="voluntario-programacao" name="areas-voluntariado" value="programacao"><label for="voluntario-programacao">Mentoria em programação</label></div>
+          <div class="opcao"><input type="checkbox" id="voluntario-oficinas" name="areas-voluntariado" value="oficinas"><label for="voluntario-oficinas">Apoio em oficinas</label></div>
+          <div class="opcao"><input type="checkbox" id="voluntario-orientacao" name="areas-voluntariado" value="orientacao"><label for="voluntario-orientacao">Orientação profissional</label></div>
+          <div class="opcao"><input type="checkbox" id="voluntario-eventos" name="areas-voluntariado" value="eventos"><label for="voluntario-eventos">Organização de eventos</label></div>
+        </div>
+        <small class="grupo-erro" data-group-error="areas-voluntariado" aria-live="polite"></small>
+      </fieldset>
+      <label for="voluntario-experiencia">Experiência ou conhecimentos</label>
+      <textarea id="voluntario-experiencia" name="experiencia" rows="4" maxlength="500"
+        placeholder="Conte brevemente sua experiência."></textarea>
+      <label for="voluntario-disponibilidade">Disponibilidade</label>
+      <input type="text" id="voluntario-disponibilidade" name="disponibilidade" maxlength="100"
+        placeholder="Ex.: quartas à noite">
+      <label for="voluntario-mensagem">Mensagem ou observações</label>
+      <textarea id="voluntario-mensagem" name="mensagem" rows="5" maxlength="500"
+        placeholder="Conte como gostaria de contribuir."></textarea>
+    </fieldset>
+    <p class="aviso-privacidade">As informações serão usadas apenas para compreender seu interesse em atuar como
+      voluntário.</p>
+    <p class="form-status" id="status-voluntario" role="status" aria-atomic="true"></p>
+    <button type="submit">Enviar interesse</button>
+  </form>
+</div>

@@ -3,7 +3,16 @@ const menu = document.querySelector(".menu");
 const submenuToggle = document.querySelector(".menu-submenu-toggle");
 const dropdown = document.querySelector(".menu-item-dropdown");
 
+function fecharSubmenu() {
+  if (!submenuToggle || !dropdown) return;
+
+  dropdown.classList.remove("is-open");
+  submenuToggle.setAttribute("aria-expanded", "false");
+  submenuToggle.setAttribute("aria-label", "Abrir submenu Participar");
+}
+
 function fecharMenu() {
+  fecharSubmenu();
   if (!menuToggle || !menu) return;
 
   menu.classList.remove("is-open");
@@ -20,12 +29,53 @@ if (menuToggle && menu) {
   });
 }
 
+if (menu) {
+  menu.querySelectorAll("a[href^='#/']").forEach((link) => {
+    link.addEventListener("click", fecharMenu);
+  });
+}
+
 if (submenuToggle && dropdown) {
   submenuToggle.addEventListener("click", () => {
     const aberto = submenuToggle.getAttribute("aria-expanded") === "true";
     submenuToggle.setAttribute("aria-expanded", String(!aberto));
     submenuToggle.setAttribute("aria-label", aberto ? "Abrir submenu Participar" : "Fechar submenu Participar");
     dropdown.classList.toggle("is-open", !aberto);
+  });
+}
+
+if (dropdown && submenuToggle) {
+  dropdown.addEventListener("mouseenter", () => {
+    if (window.matchMedia("(max-width: 576px)").matches) return;
+
+    dropdown.classList.add("is-open");
+    submenuToggle.setAttribute("aria-expanded", "true");
+    submenuToggle.setAttribute("aria-label", "Fechar submenu Participar");
+  });
+
+  dropdown.addEventListener("mouseleave", () => {
+    if (window.matchMedia("(max-width: 576px)").matches) return;
+    if (dropdown.contains(document.activeElement)) return;
+
+    fecharSubmenu();
+  });
+}
+
+if (dropdown && submenuToggle) {
+  dropdown.addEventListener("focusin", (event) => {
+  if (window.matchMedia("(max-width: 576px)").matches) return;
+  if (event.target === submenuToggle) return;
+
+  dropdown.classList.add("is-open");
+  submenuToggle.setAttribute("aria-expanded", "true");
+  submenuToggle.setAttribute("aria-label", "Fechar submenu Participar");
+});
+
+  dropdown.addEventListener("focusout", (event) => {
+    if (window.matchMedia("(max-width: 576px)").matches) return;
+    if (dropdown.contains(event.relatedTarget)) return;
+
+    fecharSubmenu();
   });
 }
 
@@ -38,11 +88,5 @@ document.addEventListener("click", (event) => {
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
     fecharMenu();
-
-    if (submenuToggle && dropdown) {
-      submenuToggle.setAttribute("aria-expanded", "false");
-      submenuToggle.setAttribute("aria-label", "Abrir submenu Participar");
-      dropdown.classList.remove("is-open");
-    }
   }
 });

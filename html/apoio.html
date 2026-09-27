@@ -1,0 +1,37 @@
+<section class="apresentacao-cadastro" aria-labelledby="titulo-apoio">
+  <div class="container">
+    <h1 id="titulo-apoio">Apoie a ConectaJovem</h1>
+    <p>Registre seu interesse em contribuir com as atividades da organização.</p>
+  </div>
+</section>
+<div class="container">
+  <form class="formulario-cadastro" id="form-apoiador" aria-describedby="status-apoiador">
+    <p>Campos com <span class="obrigatorio" aria-hidden="true">*</span> são obrigatórios.</p>
+    <fieldset>
+      <legend>Interesse em apoiar a ConectaJovem</legend>
+      <label for="apoiador-nome">Nome completo ou organização <span class="obrigatorio" aria-hidden="true">*</span></label>
+      <input type="text" id="apoiador-nome" name="nome" required minlength="3" maxlength="120" autocomplete="name" placeholder="Ex.: Empresa ou pessoa apoiadora">
+      <fieldset class="grupo-opcoes" data-required-group="tipos-apoio">
+        <legend>Como deseja apoiar <span class="obrigatorio" aria-hidden="true">*</span></legend>
+        <div class="opcoes">
+          <div class="opcao"><input type="checkbox" id="apoio-financeiro" name="tipos-apoio" value="financeiro"><label for="apoio-financeiro">Apoio financeiro</label></div>
+          <div class="opcao"><input type="checkbox" id="apoio-equipamentos" name="tipos-apoio" value="equipamentos"><label for="apoio-equipamentos">Computadores e equipamentos</label></div>
+          <div class="opcao"><input type="checkbox" id="apoio-materiais" name="tipos-apoio" value="materiais"><label for="apoio-materiais">Materiais para oficinas</label></div>
+          <div class="opcao"><input type="checkbox" id="apoio-parceria" name="tipos-apoio" value="parceria"><label for="apoio-parceria">Parceria institucional</label></div>
+        </div>
+        <small class="grupo-erro" data-group-error="tipos-apoio" aria-live="polite"></small>
+      </fieldset>
+      <label for="apoiador-email">E-mail <span class="obrigatorio" aria-hidden="true">*</span></label>
+      <input type="email" id="apoiador-email" name="email" required maxlength="100" autocomplete="email" placeholder="Ex.: contato@empresa.com">
+      <label for="apoiador-telefone">Celular ou telefone</label>
+      <input type="tel" id="apoiador-telefone" name="telefone" maxlength="20" autocomplete="tel" inputmode="tel" placeholder="Ex.: (31) 99999-0000">
+      <label for="apoiador-cidade">Cidade</label>
+      <input type="text" id="apoiador-cidade" name="cidade" maxlength="50" autocomplete="address-level2" placeholder="Ex.: Belo Horizonte">
+      <label for="apoiador-mensagem">Mensagem ou observações</label>
+      <textarea id="apoiador-mensagem" name="mensagem" rows="6" maxlength="600" placeholder="Conte como deseja apoiar a organização."></textarea>
+    </fieldset>
+    <p class="aviso-privacidade">Este formulário registra apenas o interesse inicial. Não há pagamento ou envio de dados bancários nesta etapa.</p>
+    <p class="form-status" id="status-apoiador" role="status" aria-atomic="true"></p>
+    <button type="submit">Enviar interesse</button>
+  </form>
+</div>
