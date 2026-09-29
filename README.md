@@ -15,16 +15,9 @@ Este trabalho foi desenvolvido para fins acadêmicos e utiliza informações fic
 - CSS Grid
 - Flexbox
 - JavaScript
-<<<<<<< HEAD
 - Google Fonts
 - Bootstrap Icons por CDN
-=======
-- SVG
-- Google Fonts
->>>>>>> origin/main
-
 ## Recursos implementados
-
 - Design System com variáveis CSS;
 - Layout responsivo;
 - Grid de 12 colunas;
@@ -34,16 +27,13 @@ Este trabalho foi desenvolvido para fins acadêmicos e utiliza informações fic
 - Formulário com validação local;
 - Estados de foco, hover e disabled;
 - Feedback visual;
-<<<<<<< HEAD
 - Navegação por teclado;
 - Aplicação SPA com roteamento por hash;
 - Templates HTML carregados com `fetch` e cache;
 - Validação personalizada de formulários;
 - Persistência local com `localStorage`;
 - Código JavaScript organizado em módulos ES6.
-
 ## Como executar
-
 Execute o projeto por um servidor local, como a extensão Live Server no Visual Studio Code. O servidor é necessário porque a SPA utiliza `fetch` para carregar os fragmentos HTML e os módulos JavaScript.
 
 ## Estrutura principal
@@ -61,14 +51,3 @@ Os formulários possuem validação personalizada e feedback visual. Após a val
 ## Observação acadêmica
 
 Este projeto foi desenvolvido para fins acadêmicos, com informações institucionais fictícias e sem processamento real de inscrições, voluntariado ou doações.
-=======
-- Navegação por teclado.
-
-## Como executar
-
-Abra o arquivo `index.html` no navegador ou utilize a extensão Live Server no Visual Studio Code.
-
-## Observação
-
-O formulário possui validação e feedback local para demonstração acadêmica. Os dados não são enviados nem armazenados em servidor.
->>>>>>> origin/main
