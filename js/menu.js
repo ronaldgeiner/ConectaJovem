@@ -11,20 +11,30 @@ function fecharSubmenu() {
   submenuToggle.setAttribute("aria-label", "Abrir submenu Participar");
 }
 
-function fecharMenu() {
+function fecharMenu(devolverFoco = false) {
   fecharSubmenu();
+
   if (!menuToggle || !menu) return;
 
   menu.classList.remove("is-open");
   menuToggle.setAttribute("aria-expanded", "false");
   menuToggle.setAttribute("aria-label", "Abrir menu");
+
+  if (devolverFoco) {
+    menuToggle.focus();
+  }
 }
 
 if (menuToggle && menu) {
   menuToggle.addEventListener("click", () => {
     const aberto = menuToggle.getAttribute("aria-expanded") === "true";
+
     menuToggle.setAttribute("aria-expanded", String(!aberto));
-    menuToggle.setAttribute("aria-label", aberto ? "Abrir menu" : "Fechar menu");
+    menuToggle.setAttribute(
+      "aria-label",
+      aberto ? "Abrir menu" : "Fechar menu"
+    );
+
     menu.classList.toggle("is-open", !aberto);
   });
 }
@@ -86,7 +96,7 @@ document.addEventListener("click", (event) => {
 });
 
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    fecharMenu();
+  if (event.key === "Escape" && menu?.classList.contains("is-open")) {
+    fecharMenu(true);
   }
 });
