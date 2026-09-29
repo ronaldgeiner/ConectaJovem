@@ -1,5 +1,5 @@
-import { prepararMensagem, validarCampo } from "./validacao.js";
-import { listarRegistros, salvarRegistro } from "./armazenamento.js";
+import { prepararMensagem, validarCampo, limparValidacaoCampo } from "./validacao.js";
+import { salvarRegistro } from "./armazenamento.js";
 
 export function iniciarFormularios() {
   document.querySelectorAll(".formulario-cadastro").forEach((formulario) => {
@@ -7,7 +7,6 @@ export function iniciarFormularios() {
 
     const status = formulario.querySelector(".form-status");
     if (!status) return;
-    restaurarDados(formulario);
 
     const campos = [...formulario.querySelectorAll("input, select, textarea")]
       .filter((campo) => !campo.disabled && campo.type !== "hidden");
@@ -27,33 +26,6 @@ export function iniciarFormularios() {
       }
 
       return valido;
-    }
-    function restaurarDados(formulario) {
-      const registros = listarRegistros()
-        .filter((registro) => registro.tipoFormulario === formulario.id);
-
-      const ultimoRegistro = registros.at(-1);
-
-      if (!ultimoRegistro) return;
-
-      const campos = formulario.querySelectorAll(
-        "input, select, textarea"
-      );
-
-      campos.forEach((campo) => {
-        const valor = ultimoRegistro[campo.name];
-
-        if (valor === undefined) return;
-
-        if (campo.type === "checkbox") {
-          campo.checked = Array.isArray(valor)
-            ? valor.includes(campo.value)
-            : valor === campo.value;
-          return;
-        }
-
-        campo.value = valor;
-      });
     }
 
     function limparStatus() {
@@ -142,6 +114,15 @@ export function iniciarFormularios() {
         status.textContent = erro.message;
         return;
       }
+
+      formulario.reset();
+      tentativaEnvio = false;
+      campos.forEach(limparValidacaoCampo);
+      grupos.forEach((grupo) => {
+        grupo.classList.remove("grupo-invalido");
+        const mensagem = grupo.querySelector("[data-group-error]");
+        if (mensagem) mensagem.textContent = "";
+      });
 
       status.classList.add("form-status--sucesso");
       status.textContent =

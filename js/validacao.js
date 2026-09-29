@@ -117,6 +117,17 @@ export function prepararMensagem(campo) {
   mensagens.set(campo, { mensagem, orientacao });
 }
 
+export function limparValidacaoCampo(campo) {
+  campo.setCustomValidity("");
+  campo.classList.remove("campo-interagido");
+  campo.removeAttribute("aria-invalid");
+  const dados = mensagens.get(campo);
+  if (!dados) return;
+  dados.mensagem.textContent = dados.orientacao;
+  dados.mensagem.classList.remove("campo-erro");
+  dados.mensagem.classList.add("campo-dica");
+}
+
 export function validarCampo(campo, exibir = true) {
   const erro = obterErroCampo(campo);
   campo.setCustomValidity(erro);
