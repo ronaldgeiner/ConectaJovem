@@ -69,6 +69,12 @@ async function atualizarPagina() {
 }
 
 export function iniciarNavegacao() {
-  window.addEventListener("hashchange", atualizarPagina);
-  atualizarPagina();
+  window.addEventListener("hashchange", () => {
+    if (window.location.hash === "#conteudo-principal") {
+      document.querySelector("#conteudo-principal")?.focus();
+      return;
+    }
+
+    atualizarPagina();
+  });
 }
