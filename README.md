@@ -62,6 +62,8 @@ A interface utiliza HTML semântico, headings organizados, textos alternativos n
 
 A imagem principal possui versão WebP e dimensões declaradas no HTML para reduzir mudanças de layout. O carregamento da imagem principal utiliza prioridade alta e decodificação assíncrona. O logotipo do rodapé utiliza carregamento tardio e decodificação assíncrona. A aplicação mantém os arquivos estáticos organizados e não utiliza dependências de build.
 
+Os arquivos de produção também foram minificados com ferramentas executadas pelo `npx`: Terser para os módulos JavaScript, CSSO para a folha de estilos e HTML Minifier Terser para o documento principal e os fragmentos HTML. Após a minificação, todas as rotas, menus e formulários foram testados no navegador.
+
 ## Deploy
 
 O projeto está publicado no GitHub Pages:
