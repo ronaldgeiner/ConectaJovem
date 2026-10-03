@@ -77,4 +77,6 @@ export function iniciarNavegacao() {
 
     atualizarPagina();
   });
+
+  atualizarPagina();
 }
