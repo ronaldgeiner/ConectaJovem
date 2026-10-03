@@ -36,6 +36,8 @@ Este trabalho foi desenvolvido para fins acadêmicos e utiliza informações fic
 ## Como executar
 Execute o projeto por um servidor local, como a extensão Live Server no Visual Studio Code. O servidor é necessário porque a SPA utiliza `fetch` para carregar os fragmentos HTML e os módulos JavaScript.
 
+Não há dependências NPM nem etapa de build. As bibliotecas externas utilizadas são Google Fonts e Bootstrap Icons, carregadas por CDN.
+
 ## Estrutura principal
 
 - `index.html`: ponto de entrada da SPA, com cabeçalho, navegação, área principal e rodapé;
@@ -51,3 +53,23 @@ Os formulários possuem validação personalizada e feedback visual. Após a val
 ## Observação acadêmica
 
 Este projeto foi desenvolvido para fins acadêmicos, com informações institucionais fictícias e sem processamento real de inscrições, voluntariado ou doações.
+
+## Acessibilidade
+
+A interface utiliza HTML semântico, headings organizados, textos alternativos nas imagens, rótulos associados aos campos e atributos ARIA na navegação. O link para pular ao conteúdo, o foco visível, a navegação por teclado, o fechamento do menu com `Escape` e o retorno do foco ao botão do menu foram verificados manualmente. Também foram realizados testes com zoom de 220% nos projetos e nos três formulários, sem sobreposição ou rolagem horizontal. A página inicial obteve 100 pontos no relatório de acessibilidade do Lighthouse.
+
+## Otimização
+
+A imagem principal possui versão WebP e dimensões declaradas no HTML para reduzir mudanças de layout. O carregamento da imagem principal utiliza prioridade alta e decodificação assíncrona. O logotipo do rodapé utiliza carregamento tardio e decodificação assíncrona. A aplicação mantém os arquivos estáticos organizados e não utiliza dependências de build.
+
+## Deploy
+
+O projeto está publicado no GitHub Pages:
+
+<https://ronaldgeiner.github.io/ConectaJovem/index.html#/inicio>
+
+O roteamento por hash permite que as rotas da SPA funcionem em uma hospedagem estática. Após o envio de alterações para a branch `main`, o GitHub Pages atualiza a versão publicada.
+
+## Versionamento
+
+O repositório utiliza GitFlow, com `main` para versões estáveis, `develop` para integração e branches `feature/` para alterações isoladas. As entregas são registradas com commits semânticos, pull requests e versionamento semântico. A primeira versão consolidada foi identificada pela tag `v1.0.0`.
